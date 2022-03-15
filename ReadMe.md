@@ -1,1 +1,1 @@
-## 🐰 Next.js + Tauix
+## 🐰 Taui UI Docs
