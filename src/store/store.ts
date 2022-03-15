@@ -7,7 +7,7 @@ export interface APP {
 }
 
 const INITIAL: APP = {
-  theme: 'tau-light',
+  theme: 'tau-dark',
 };
 
 const reducer = (state: APP, action: AnyAction) => {
