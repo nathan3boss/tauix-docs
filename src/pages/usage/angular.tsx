@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   github,
-  paraisoDark,
+  dracula,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 // Components
@@ -49,7 +49,7 @@ const UsageAngular = () => {
 
             <SyntaxHighlighter
               language="javascript"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {angularConfig}
             </SyntaxHighlighter>
@@ -63,7 +63,7 @@ const UsageAngular = () => {
 
             <SyntaxHighlighter
               language="vue"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {angularDefineComponents}
             </SyntaxHighlighter>
@@ -77,14 +77,14 @@ const UsageAngular = () => {
 
             <SyntaxHighlighter
               language="vue"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {angularTheme}
             </SyntaxHighlighter>
 
             <SyntaxHighlighter
               language="vue"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {angularThemeTemplate}
             </SyntaxHighlighter>

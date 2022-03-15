@@ -4,7 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useSelector } from 'react-redux';
 import {
   github,
-  paraisoDark,
+  dracula,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 // Components
@@ -69,7 +69,7 @@ const GetStarted = () => {
 
             <SyntaxHighlighter
               language="bash"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {`// with npm\n\nnpm install tauix\n\n// with yarn\n\nyarn add tauix`}
             </SyntaxHighlighter>

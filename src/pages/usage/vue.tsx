@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useSelector } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { github, paraisoDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { github, dracula } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 // Components
 import { TauButton } from 'tauix/react';
@@ -42,7 +42,7 @@ const UsageVue = () => {
 
             <SyntaxHighlighter
               language="javascript"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {vue2UsageConfigure}
             </SyntaxHighlighter>
@@ -58,7 +58,7 @@ const UsageVue = () => {
 
             <SyntaxHighlighter
               language="vue"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {vue2Usage}
             </SyntaxHighlighter>
@@ -78,7 +78,7 @@ const UsageVue = () => {
 
             <SyntaxHighlighter
               language="vue"
-              style={theme == 'tau-light' ? github : paraisoDark}
+              style={theme == 'tau-light' ? github : dracula}
             >
               {vue3Usage}
             </SyntaxHighlighter>
