@@ -70,7 +70,7 @@ new Vue({
   render: h => h(App)
 }).$mount('#app');
 
-`
+`;
 
 export const vue2Usage = `// App.vue
 
@@ -98,7 +98,7 @@ export default {
 <style lang="scss">
 @import "~tauix/core/themes/themes.css";
 </style>
-`
+`;
 
 export const vue3Usage = `// App.vue
 
@@ -131,4 +131,95 @@ export default {
   },
 };
 </script>
-`
+`;
+
+export const angularConfig = `
+// app.module.ts
+
+import { BrowserModule } from "@angular/platform-browser";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+`;
+
+export const angularTheme = `
+// app.component.ts
+
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
+})
+export class AppComponent {
+  theme: string = "tau-light";
+
+  toggleTheme(e: CustomEvent) {
+    this.theme = e.detail.current;
+  }
+}
+`;
+
+export const angularThemeTemplate = `
+// app.component.html
+
+<tau-theme theme="{{theme}}" (tauLimn)="toggleTheme($event)">
+  <tau-button>Angular</tau-button>
+</tau-theme>
+
+`;
+
+export const javascriptUsage = `
+<html>
+  <head>
+    <link rel=¨stylesheet¨ type=¨text/css¨ href="https://cdn.jsdelivr.net/npm/tauix/core/themes/themes.css"/>
+
+    <script type="module">
+      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/tauix/stencil/loader/index.es2017.js';
+      defineCustomElements();
+    </script>
+  </head>
+  <body>
+    <tau-theme>
+      <tau-button>OOHHHH</tau-button>
+    </tau-theme>
+  </body>
+</html>
+`;
+
+export const angularDefineComponents = `
+// main.ts
+
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { applyPolyfills, defineCustomElements } from 'tauix/stencil/loader';
+
+import { AppModule } from "./app/app.module";
+import { environment } from "./environments/environment";
+
+// CSS Themes
+import "tauix/core/themes/themes.css";
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+
+`;
